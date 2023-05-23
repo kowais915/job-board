@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const {
     getAllJobs,
+    postAJob,
 
 } = require("../controller/jobController.js");
 
@@ -12,13 +13,7 @@ router.get("/", getAllJobs)
 
 // post a job
 
-router.post("/", (req, res)=>{
-
-    res.json({
-        msg: "You posted a job."
-    })
-
-})
+router.post("/", postAJob )
 
 // delete a job
 router.delete("/:id", (req, res)=>{
