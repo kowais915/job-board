@@ -1,7 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
+// imports from other directories
+const router = require("./routes/apiRoutes");
+
 const app = express();
+
+// middle wares
+app.use(express.json());
+app.use("/api", router);
 
 
 app.listen(5000, ()=>{
