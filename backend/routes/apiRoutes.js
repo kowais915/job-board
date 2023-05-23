@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
+const {
+    getAllJobs,
+
+} = require("../controller/jobController.js");
 
 // @route   GET api/test
 
-router.get("/", (req, res )=>{
-    res.json({
-        msg: "Here are all the jobs."
-    })
-})
+router.get("/", getAllJobs)
 
 
 // post a job
