@@ -18,17 +18,33 @@ function postAJob(req, res){
 }
 
 
-// delete a job
-
-
 // update a job
+function updateAJob(req, res){
+    res.json({
+        msg: "You updated a job."
+    })
+}
+
+// delete a job
+function deleteAJob(req, res){
+    res.json({
+        msg: "You deleted a job."
+    })
+}
 
 // get a job
-
+function getAJob(req, res){
+    res.json({
+        msg: "You got a job."
+    })
+}
 
 
 
 module.exports = {
     getAllJobs,
-    postAJob
+    postAJob,
+    updateAJob,
+    getAJob,
+    deleteAJob
 }

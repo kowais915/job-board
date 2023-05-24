@@ -3,6 +3,9 @@ const router = express.Router();
 const {
     getAllJobs,
     postAJob,
+    updateAJob,
+    getAJob,
+    deleteAJob
 
 } = require("../controller/jobController.js");
 
@@ -16,26 +19,14 @@ router.get("/", getAllJobs)
 router.post("/", postAJob )
 
 // delete a job
-router.delete("/:id", (req, res)=>{
-    res.json({
-        msg: "You deleted a job."
-    })
-})
+router.delete("/:id", deleteAJob)
 
 
 // update a job
-router.patch("/:id", (req, res)=>{
-    res.json({
-        msg: "You updated a job."
-    })
-})
+router.patch("/:id", updateAJob)
 
 
 // get a job
-router.get("/:id", (req, res)=>{
-    res.json({
-        msg: "You got a job."
-    })
-})
+router.get("/:id", getAJob)
 
 module.exports = router;
