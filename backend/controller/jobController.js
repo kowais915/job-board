@@ -1,3 +1,4 @@
+const JobModel = require('../models/jobModel');
 
 
 // get all jobs
@@ -9,12 +10,22 @@ function getAllJobs(req, res ){
 
 
 // post a job
-function postAJob(req, res){
+async function postAJob(req, res){
 
-    res.json({
-        msg: "You posted a job."
-    })
+    const {title, description} = req.body;
 
+    try{
+
+        const job = await JobModel.create({title, description});
+        res.status(200).json(job)
+
+    }catch(err){
+        res.status(400).json({error: err.message})
+        
+
+    }
+
+   
 }
 
 
