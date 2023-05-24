@@ -9,10 +9,20 @@ const JobSchema = new Schema({
         required: true
     
     }, 
+    skills: {
+        type: String,
+        required: true
+    },
+    salary: {
+        type: Number,
+        required: true
+    },
+
     description: {
         type: String,
         required: true
     },
+
     
 }, {timestamps: true})
 
