@@ -31,9 +31,12 @@ async function postAJob(req, res){
 
 // update a job
 function updateAJob(req, res){
-    res.json({
-        msg: "You updated a job."
-    })
+   const {id}  = req.params;
+
+   if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send("No job with that id");
+   const {title, description} = req.body;
+    const updatedJob = {title, description, _id: id};
+
 }
 
 // delete a job
